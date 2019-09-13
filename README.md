@@ -25,7 +25,6 @@ Not connected . . . . . . . . . . : skipping
 Ethernet interface: docker0
 
 IPv4 . . . . . . . . . . : 172.17.0.1
-IPv6 . . . . . . . . . . : 172.17.0.1
 ```
 ## Dependencies
 
