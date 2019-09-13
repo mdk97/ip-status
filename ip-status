@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use diagnostics;
+use v5.10;
+
+chomp(my $ip_cmd = `ip a`);
+my @interfaces = split(/^[0-9]:|\n[0-9]:/, $ip_cmd);
+shift(@interfaces);
+
+foreach my $if (@interfaces)
+{
+    $if =~ /(\w*):/;
+    my $name = $1;
+    say("Ethernet interface: $name\n") if not $name =~ /^w/;
+    say("Wireless interface: $name\n") if $name =~ /^w/;
+
+  if (not $if =~ /inet/)
+  {
+    say("Not connected . . . . . . . . . . : skipping\n");
+    next;
+  }
+    $if =~ /inet ((?:[0-9]*[.]*)*)/;
+    my $ipv4 = $1;
+    say("IPv4 . . . . . . . . . . : $ipv4") if defined $ipv4;
+
+    $if =~ /inet6 ((?:\w*[:]*)*)/;
+    my $ipv6 = $1;
+    say("IPv6 . . . . . . . . . . : $ipv6");
+    print("\n") unless $if eq $interfaces[-1];
+}
