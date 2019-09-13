@@ -27,6 +27,6 @@ foreach my $if (@interfaces)
 
     $if =~ /inet6 ((?:\w*[:]*)*)/;
     my $ipv6 = $1;
-    say("IPv6 . . . . . . . . . . : $ipv6");
+    say("IPv6 . . . . . . . . . . : $ipv6") if $ipv6 ne $ipv4;
     print("\n") unless $if eq $interfaces[-1];
 }
