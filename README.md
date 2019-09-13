@@ -29,4 +29,4 @@ IPv6 . . . . . . . . . . : 172.17.0.1
 ```
 ## Dependencies
 
-It doesn't require any dependencies as it's a Perl script that parses the _ip a_ command output.
+It doesn't require any dependencies as it's just a Perl script that parses the _ip a_ command output.
