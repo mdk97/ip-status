@@ -16,11 +16,11 @@ foreach my $if (@interfaces)
     say("Ethernet interface: $name\n") if not $name =~ /^w/;
     say("Wireless interface: $name\n") if $name =~ /^w/;
 
-  if (not $if =~ /inet/)
-  {
-    say("Not connected . . . . . . . . . . : skipping\n");
-    next;
-  }
+    if (not $if =~ /inet/)
+    {
+        say("Not connected . . . . . . . . . . : skipping\n");
+        next;
+    }
     $if =~ /inet ((?:[0-9]*[.]*)*)/;
     my $ipv4 = $1;
     say("IPv4 . . . . . . . . . . : $ipv4") if defined $ipv4;
