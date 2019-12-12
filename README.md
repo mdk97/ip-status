@@ -1,8 +1,7 @@
 # ip-status
 
-Makes it easier to see the IP configuration on a Unix-like system with a text formatting imitating the ipconfig on Windows machines.
-
-### No more suffering with _ip a_
+Makes it easier to see the IP configuration on Linux systems that have support for the `ip` command.
+Prints formatted text imitating the ipconfig command on Windows machines.
 
 With ip-status you can see all the IP addresses at once on a simple and organized way.
 
